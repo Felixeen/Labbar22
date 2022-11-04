@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Uppgift1
+namespace Uppgift5
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -25,9 +25,21 @@ namespace Uppgift1
             InitializeComponent();
         }
 
-        private void BtnMessage_Click(object sender, RoutedEventArgs e)
+        private void btnOne_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Du tryckte på mig!");
+            double numOne = Convert.ToDouble(txtBox.Text);
+            double numTwo = Convert.ToDouble(txtBox2.Text);
+
+            double sum = numOne + numTwo;
+
+            txtBox3.Text = sum.ToString();
+        }
+
+        private void btnTwo_Click(object sender, RoutedEventArgs e)
+        {
+            txtBox.Clear();
+            txtBox2.Clear();
+            txtBox3.Clear();
         }
     }
 }

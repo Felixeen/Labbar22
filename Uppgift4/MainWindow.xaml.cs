@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Uppgift1
+namespace Uppgift4
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -25,9 +25,16 @@ namespace Uppgift1
             InitializeComponent();
         }
 
-        private void BtnMessage_Click(object sender, RoutedEventArgs e)
+        private void btnOne_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Du tryckte på mig!");
+            if (txtBlock.Visibility == Visibility.Hidden)
+            {
+                txtBlock.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                txtBlock.Visibility = Visibility.Hidden;
+            }
         }
     }
 }
