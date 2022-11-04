@@ -27,10 +27,10 @@ namespace Uppgift5
 
         private void btnOne_Click(object sender, RoutedEventArgs e)
         {
-            double numOne = Convert.ToDouble(txtBox.Text);
-            double numTwo = Convert.ToDouble(txtBox2.Text);
+            double txt1 = double.Parse(txtBox.Text);
+            double txt2 = double.Parse(txtBox2.Text);
 
-            double sum = numOne + numTwo;
+            double sum = txt1 + txt2;
 
             txtBox3.Text = sum.ToString();
         }

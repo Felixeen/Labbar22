@@ -11,7 +11,7 @@
         <Button x:Name="btnTwo" Content="Rensa" HorizontalAlignment="Left" Margin="301,278,0,0" VerticalAlignment="Top" Width="40" Click="btnTwo_Click"/>
         <TextBlock x:Name="txtBlock" HorizontalAlignment="Left" Margin="301,204,0,0" TextWrapping="Wrap" Text="_________________________" VerticalAlignment="Top" Width="127"/>
         <TextBlock x:Name="addBlock" HorizontalAlignment="Left" Margin="304,148,0,0" TextWrapping="Wrap" Text="+" VerticalAlignment="Top" Height="62" Width="34" FontSize="48"/>
-        <TextBox x:Name="txtBox" HorizontalAlignment="Left" Margin="343,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="57" Height="42" TextChanged="txtBox_TextChanged"/>
+        <TextBox x:Name="txtBox" HorizontalAlignment="Left" Margin="343,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="57" Height="42" />
         <TextBox x:Name="txtBox2" HorizontalAlignment="Left" Margin="343,162,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="57" Height="42"/>
         <TextBox x:Name="txtBox3" HorizontalAlignment="Left" Margin="346,228,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="57" Height="42"/>
 
