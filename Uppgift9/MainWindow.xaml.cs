@@ -27,30 +27,32 @@ namespace Uppgift9
 
         private void konBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrEmpty(galBox.Text) && string.IsNullOrEmpty(sikBox.Text) && string.IsNullOrEmpty(knutBox.Text))
-            {
-                MessageBox.Show("Du måste ange ett värde");
-                return;
-            }
+            //if (string.IsNullOrEmpty(galBox.Text) && string.IsNullOrEmpty(sikBox.Text) && string.IsNullOrEmpty(knutBox.Text))
+            //{
+            //    MessageBox.Show("Du måste ange ett värde");
+            //    return;
+            //}
             
             int gal = int.Parse(galBox.Text);
             int sik = int.Parse(sikBox.Text);
             int knut = int.Parse(knutBox.Text);
 
 
-            int gal1 = gal * 0;
-            int sik1 = sik * 17;
-            int knut1 = knut * 493;
-
-            int sum = gal1 + sik1 + knut1;
-
-
+            double galSek = 62.02;
             
+            double gal1 = gal * galSek;
+            double sik1 = sik / 17 * galSek;
+            double knut1 = knut / 493 * galSek;
+
+            double sum = gal1 + sik1 + knut1;
 
 
 
 
-            summa.Content = sum.ToString(format: $"{Math.Round(sum * 62.02, 0 ) + " SEK"}");
+
+
+
+            summa.Content = sum.ToString ("#") + " SEK";
 
 
 
