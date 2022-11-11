@@ -27,11 +27,11 @@ namespace Uppgift9
 
         private void konBtn_Click(object sender, RoutedEventArgs e)
         {
-            //if (string.IsNullOrEmpty(galBox.Text) && string.IsNullOrEmpty(sikBox.Text) && string.IsNullOrEmpty(knutBox.Text))
-            //{
-            //    MessageBox.Show("Du måste ange ett värde");
-            //    return;
-            //}
+            if (string.IsNullOrEmpty(galBox.Text) || string.IsNullOrEmpty(sikBox.Text) || string.IsNullOrEmpty(knutBox.Text))
+            {
+                MessageBox.Show("Du måste ange ett värde");
+                return;
+            }
             
             int gal = int.Parse(galBox.Text);
             int sik = int.Parse(sikBox.Text);
