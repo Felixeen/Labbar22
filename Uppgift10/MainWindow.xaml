@@ -1,0 +1,20 @@
+﻿<Window x:Class="Uppgift10.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Uppgift10"
+        mc:Ignorable="d"
+        Title="Åldergränsen" Height="450" Width="800">
+    <Grid>
+        <Label x:Name="namn" Content="Namn" HorizontalAlignment="Left" Margin="218,137,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="nameBox" HorizontalAlignment="Left" Margin="218,168,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="ålder" Content="Ålder" HorizontalAlignment="Left" Margin="222,199,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="ageBox" HorizontalAlignment="Left" Margin="222,230,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="ctrlBtn" Content="Kontrollera" HorizontalAlignment="Center" Margin="0,230,0,0" VerticalAlignment="Top" Click="ctrlBtn_Click"/>
+        <TextBlock x:Name="svarBlock" HorizontalAlignment="Left" Margin="222,290,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <RadioButton x:Name="medOk" Content="Med vuxen" HorizontalAlignment="Left" Margin="369,177,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="utanOk" Content="Utan vuxen" HorizontalAlignment="Left" Margin="369,197,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>
