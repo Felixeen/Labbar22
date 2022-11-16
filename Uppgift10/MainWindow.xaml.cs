@@ -27,8 +27,8 @@ namespace Uppgift10
 
         private void ctrlBtn_Click(object sender, RoutedEventArgs e)
         {
-           
-           
+            slumpBtn.IsEnabled = false;
+            
             string name = nameBox.Text;
             int age = int.Parse(ageBox.Text);
             
