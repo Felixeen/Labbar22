@@ -64,22 +64,45 @@ namespace Uppgift11
                 guesses = 0;
                 svarBlock.Text = "Du har gissat " + guesses + " gånger";
             }
+
+            
             else if (i < number)
             {
-                MessageBox.Show("Gissa högre");
+                if (i < number && i < number - min100)
+
+                {
+                    MessageBox.Show("Nu är du långt ifrån... gissa mycket högre");
+                }
+
+                else if (i < number && i > number - min100)
+               
+                {
+                    MessageBox.Show("Gissa högre");
+                }
+            
+
+                    
             }
+
+            
+            
             else if (i > number)
             {
-                MessageBox.Show("Gissa lägre");
+                if (i > number && i > number + min100)
+                {
+                    MessageBox.Show("Nu är du långt ifrån... gissa mycket lägre");
+                }
+
+                else if (i > number && i < number + min100)
+
+                {
+                    MessageBox.Show("Gissa lägre");
+                }
+
             }
-            else if (i > number + min100)
-            {
-                MessageBox.Show("Nu är du långt ifrån... gissa mycket lägre");
-            }
-            else if (i < number - min100)
-            {
-                MessageBox.Show("Nu är du långt ifrån... gissa mycket högre");
-            }
+
+            
+            
         }
     }
 }
