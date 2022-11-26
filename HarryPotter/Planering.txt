@@ -1,0 +1,167 @@
+﻿Harry Potter proj
+
+
+Bygga en Main Class för House aka Hogwards
+
+
+Bygga klasserna för Harry Potter proj
+AKA Elevhemmen
+
+Fylla House men getters och setters
+
+Fylla elevhemmen med information
+
+Bygga metoder för att hämta information från elevhemmen till Main koden
+
+
+
+Design Harry Potter
+
+Skapa alla knapparna
+Skapa en lösenordsknapp
+Skapa en lista som visar elevhemmet och dess information
+Skapa en knapp som visar efter lösenordet är rätt att man kan byta lösenord
+
+
+
+
+lägg till under btn:
+
+Wizard wizard = new Wizard();
+            wizard.Name = txtName.Text;
+            wizard.BloodStatus = txtBloodStatus.Text;
+            wizard.DeathEater = (bool)chkDeathEater.IsChecked;
+            wizard.DumbledoresArmy = (bool)chkDumbledoresArmy.IsChecked;
+
+            if (wizard.BloodStatus == "Pure")
+            {
+                if (wizard.DeathEater == true)
+                {
+                    MessageBox.Show("You are a Slytherin!");
+                }
+                else
+                {
+                    MessageBox.Show("You are a Gryffindor!");
+                }
+            }
+            else if (wizard.BloodStatus == "Half")
+            {
+                if (wizard.DumbledoresArmy == true)
+                {
+                    MessageBox.Show("You are a Hufflepuff!");
+                }
+                else
+                {
+                    MessageBox.Show("You are a Ravenclaw!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("You are a Muggle!");
+            }
+
+----------------------------------------------
+			
+			private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Gryffindor gryffindor = new Gryffindor();
+            Slytherin slytherin = new Slytherin();
+            Ravenclaw ravenclaw = new Ravenclaw();
+            Hufflepuff hufflepuff = new Hufflepuff();
+
+            if (gryffindor.Password == PasswordBox.Text)
+            {
+                MessageBox.Show("Welcome to Gryffindor!");
+            }
+            else if (slytherin.Password == PasswordBox.Text)
+            {
+                MessageBox.Show("Welcome to Slytherin!");
+            }
+            else if (ravenclaw.Password == PasswordBox.Text)
+            {
+                MessageBox.Show("Welcome to Ravenclaw!");
+            }
+            else if (hufflepuff.Password == PasswordBox.Text)
+            {
+                MessageBox.Show("Welcome to Hufflepuff!");
+            }
+            else
+            {
+                MessageBox.Show("Invalid Password");
+            }
+        }
+			
+--------------------------------------
+
+		method for welcome txt:
+
+			
+			if (wizard.Name == "Harry Potter")
+			{
+				MessageBox.Show("You are a Gryffindor!");
+			}
+			else if (wizard.Name == "Hermione Granger")
+			{
+				MessageBox.Show("You are a Gryffindor!");
+			}
+			else if (wizard.Name == "Ron Weasley")
+			{
+				MessageBox.Show("You are a Gryffindor!");
+			}
+			else if (wizard.Name == "Draco Malfoy")
+			{
+				MessageBox.Show("You are a Slytherin!");
+			}
+			else if (wizard.Name == "Severus Snape")
+			{
+				MessageBox.Show("You are a Slytherin!");
+			}
+			else if (wizard.Name == "Luna Lovegood")
+			{
+				MessageBox.Show("You are a Ravenclaw!");
+			}
+			else if (wizard.Name == "Cho Chang")
+			{
+				MessageBox.Show("You are a Ravenclaw!");
+			}
+			else if (wizard.Name == "Cedric Diggory")
+			{
+				MessageBox.Show("You are a Hufflepuff!");
+			}
+			else if (wizard.Name == "Neville Longbottom")
+			{
+				MessageBox.Show("You are a Hufflepuff!");
+			}
+			else if (wizard.Name == "Ginny Weasley")
+			{
+				MessageBox.Show("You are a Gryffindor!");
+			}
+			else if (wizard.Name == "Albus Dumbledore")
+			{
+				MessageBox.Show("You are a Gryffindor!");
+			}
+			else if (wizard.Name == "Minerva McGonagall")
+			{
+				MessageBox.Show("You are a Gryffindor!");
+			}
+			else if (wizard.Name == "Rubeus Hagrid")
+			{
+				MessageBox.Show("You are a Gryffindor!");
+			}
+			else if (wizard.Name == "Severus Snape")
+			{
+				MessageBox.Show("You are a Slytherin!");
+			}
+			else if (wizard.Name == "Lord Voldemort")
+			{
+				MessageBox.Show("You are a Slytherin!");
+			}
+			else if (wizard.Name == "Bellatrix Lestrange")
+			{
+				MessageBox.Show("You are a Slytherin!");
+			}
+			else if (wizard.Name == "Lucius Malfoy")
+			{
+				MessageBox.Show("You are a Slytherin!");
+			}
+			else if (wizard.Name == "Filius Flitwick
