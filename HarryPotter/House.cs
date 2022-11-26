@@ -13,7 +13,7 @@ namespace HarryPotter
         public string? Mascot { get; set; }
         public string? Password { get; set; }
 
-
+        //metod för att säkerhetställa längden på lösenordet
         public virtual bool IsPasswordCorrectLength(string password)
         {
             
