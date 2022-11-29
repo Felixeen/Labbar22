@@ -9,6 +9,10 @@ namespace HarryPotter
 {
     public abstract class House
     {
+        //Lista för klassen wizard där eleverna lagras
+        public List<Wizard> Wizards { get; set; } = new List<Wizard>();
+
+
         public string? HouseGhost { get; set; }
         public string? Mascot { get; set; }
         public string? Password { get; set; }
@@ -81,12 +85,12 @@ namespace HarryPotter
             }
             else
             {
-                MessageBox.Show("Det nya lösenordet är i felaktigt format");
+                return;
             }
         }
 
-        //Lista för klassen wizard där eleverna lagras
-        public List<Wizard> Wizards { get; set; } = new List<Wizard>();
+        
+        
 
 
        

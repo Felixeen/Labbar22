@@ -15,7 +15,7 @@ namespace HarryPotter
             Mascot = "Snake";
             Password = "Snakegang";
         }
-
+        //slytherin överskrivna metod för längden av lösenordet
         public override bool IsPasswordCorrectLength(string password)
         {
 
@@ -48,17 +48,7 @@ namespace HarryPotter
 
         }
         
-        public override bool IsPasswordCorrect(string password)
-        {
-            if (IsPasswordCorrectLength(password) && IsPasswordCorrectVowel(password) && IsPasswordCorrectConsonant(password))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+       
 
 
 
