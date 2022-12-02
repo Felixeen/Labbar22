@@ -38,6 +38,10 @@ namespace Uppgift17
                 {
                     numberOfVowels++;
                 }
+                else if (mening[i] == 'A' || mening[i] == 'E' || mening[i] == 'I' || mening[i] == 'O' || mening[i] == 'U')
+                {
+                    numberOfVowels++;
+                }
             }
             vowelsBlock.Text = "Antal vokaler: " + numberOfVowels.ToString();
 
@@ -62,17 +66,33 @@ namespace Uppgift17
             resultBlock.Text = mening.ToString();
 
         }
-        
+
+        private bool IsVowel()
+        {
+            string mening = textBox.Text;
+            for (int i = 0; i < mening.Length; i++)
+            {
+                if (mening[i] == 'a' || mening[i] == 'e' || mening[i] == 'i' || mening[i] == 'o' || mening[i] == 'u')
+                {
+                    return true;
+                }
+                else if (mening[i] == 'A' || mening[i] == 'E' || mening[i] == 'I' || mening[i] == 'O' || mening[i] == 'U')
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
         
 
 
-        
-        
-    private void okBtn_Click(object sender, RoutedEventArgs e)
+
+
+        private void okBtn_Click(object sender, RoutedEventArgs e)
         {
             NumberOfVowels();
             Jibberish();
-
+            IsVowel();
         }
         
         

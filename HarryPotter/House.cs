@@ -63,7 +63,7 @@ namespace HarryPotter
             }
         }
         //metod som ser så att alla krav metoder är uppfyllda
-        public virtual bool IsPasswordCorrect(string password)
+        public bool IsPasswordCorrect(string password)
         {
             if (IsPasswordCorrectLength(password) && IsPasswordCorrectVowel(password) && IsPasswordCorrectConsonant(password))
             {

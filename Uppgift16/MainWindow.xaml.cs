@@ -23,23 +23,29 @@ namespace Uppgift16
         public MainWindow()
         {
             InitializeComponent();
+            
         }
-
-        private void okBtn_Click(object sender, RoutedEventArgs e)
+        public void CalculateAge()
         {
             int birthDate = int.Parse(yearBox.Text);
 
             int now = int.Parse(DateTime.Now.ToString("yyyy"));
             int dob = birthDate;
             int age = now - dob;
-
             MessageBox.Show("Du är " + age + " år gammal");
+        }
 
-            
+        public void okBtn_Click(object sender, RoutedEventArgs e)
+        {
+            CalculateAge();
+
+
 
 
 
         }
+
+
     }
 
 }
