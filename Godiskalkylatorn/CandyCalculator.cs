@@ -3,37 +3,58 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace Godiskalkylatorn
 {
     public class CandyCalculator
     {
-        public List <Person> Members { get; set; } = new List<Person>();
+        public List<Person> Members { get; set; } = new List<Person>();
 
+        
 
-        public void DistributeCandies(int Candies)
+        public void DistributeCandies(int candies)
         {
+            
+            int rest = candies % Members.Count;
+            int total = candies / Members.Count;
 
-            int nummer = Candies;
-            for (int i = 0; i < nummer; i+=Members.Count)
+            foreach (Person member in Members)
             {
-                //Members[i % Members.Count].Candies++;
+                member.Candies = total;
+            }
 
-                foreach (Person person in Members)
+            foreach (Person member in Members)
+            {
+                if (rest > 0)
                 {
-                    person.Candies++;
-                    Candies--;
-                    
-                    if (Candies == 0)
-                    {
-                        break;
-                    }
-
-
+                    rest--;
+                    member.Candies++;  
                 }
-            }    
+            }
+
+
+
 
         }
 
-    }
+        public void SortByFirstName()
+        {
+            Members = Members.OrderBy(x => x.FirstName).ToList();
+
+        }
+
+        public void SortByLastName()
+        {
+
+            Members = Members.OrderBy(x => x.LastName).ToList();
+        }
+        public void SortByAge()
+        {
+
+            Members = Members.OrderBy(x => x.Age).ToList();
+
+        }
+
+    }   
 }

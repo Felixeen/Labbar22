@@ -21,33 +21,20 @@ namespace Godiskalkylatorn
     /// </summary>
     public partial class MainWindow : Window
     {
+        CandyCalculator candyCalculator = new CandyCalculator();
+        
+        
         public MainWindow()
         {
+            
             InitializeComponent();
             //fokuserar på första textrutan när programmet startas
             fNameBox.Focus();
             
         }
 
-        
-
-        public void addBtn_Click(object sender, RoutedEventArgs e)
+        public void Clear()
         {
-            
-            Person person = new Person();
-            
-            person.FirstName = fNameBox.Text;
-            person.LastName = lNameBox.Text;
-            person.Age = int.Parse(ageBox.Text);
-
-
-            personListBox.Items.Add(person.FirstName + " " + person.LastName + " (" + person.Age + " år):" + " " + person.Candies);
-
-
-
-
-
-
             //tar bort tidigare text i textrutorna
             fNameBox.Clear();
             lNameBox.Clear();
@@ -56,23 +43,78 @@ namespace Godiskalkylatorn
             //fokuserar på första textrutan igen
             fNameBox.Focus();
         }
+        
 
-
-
-        public void okBtn_Click(object sender, RoutedEventArgs e)
+        public void addBtn_Click(object sender, RoutedEventArgs e)
         {
-            //CandyCalculator candy = new CandyCalculator();
+            
 
-            //ta bort kan inte vara ny person
+
+            
+
+            string firstName = fNameBox.Text;
+            string lastName = lNameBox.Text;
+            int age = int.Parse(ageBox.Text);
+
+
+            AddPerson(firstName, lastName, age);
+
+
+            personListBox.ItemsSource = null;
+
+            personListBox.ItemsSource = candyCalculator.Members;
+
+            Clear();
+
+        }
+
+        public void AddPerson(string inputFirst, string inputLast, int inputAge)
+        {
             Person person = new Person();
-            person.Candies = int.Parse(godisBox.Text);
+            person.FirstName = inputFirst;
+            person.LastName = inputLast;
+            person.Age = inputAge;
 
-            //skriv ut candies i listbox på varje person ifrån candy calculator
+            candyCalculator.Members.Add(person);
+        }
+        
+        //fördela metod
+        private void okBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+            int candies = int.Parse(godisBox.Text);
+            candyCalculator.DistributeCandies(candies);
+            personListBox.ItemsSource = null;
+            personListBox.ItemsSource = candyCalculator.Members;
             
             
 
 
+        }
 
+        
+        
+
+
+        private void radioLastName_Checked(object sender, RoutedEventArgs e)
+        {
+            candyCalculator.SortByLastName();
+            personListBox.ItemsSource = null;
+            personListBox.ItemsSource = candyCalculator.Members;
+        }
+
+        public void radioFirstName_Checked(object sender, RoutedEventArgs e)
+        {
+            candyCalculator.SortByFirstName();
+            personListBox.ItemsSource = null;
+            personListBox.ItemsSource = candyCalculator.Members;
+        }
+
+        public void radioAge_Checked(object sender, RoutedEventArgs e)
+        {
+            candyCalculator.SortByAge();
+            personListBox.ItemsSource = null;
+            personListBox.ItemsSource = candyCalculator.Members;
         }
     }
 }
