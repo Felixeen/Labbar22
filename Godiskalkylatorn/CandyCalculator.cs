@@ -12,7 +12,7 @@ namespace Godiskalkylatorn
         public List<Person> Members { get; set; } = new List<Person>();
 
         
-
+        //metod för att distrubiera karamellerna
         public void DistributeCandies(int candies)
         {
             
@@ -37,7 +37,7 @@ namespace Godiskalkylatorn
 
 
         }
-
+        //sorteringsmetoder som aktiveras från radioknapparna
         public void SortByFirstName()
         {
             Members = Members.OrderBy(x => x.FirstName).ToList();

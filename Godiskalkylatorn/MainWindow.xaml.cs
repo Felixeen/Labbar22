@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -28,6 +29,7 @@ namespace Godiskalkylatorn
         {
             
             InitializeComponent();
+            CheckJSON();
             //fokuserar på första textrutan när programmet startas
             fNameBox.Focus();
             
@@ -43,9 +45,9 @@ namespace Godiskalkylatorn
             //fokuserar på första textrutan igen
             fNameBox.Focus();
         }
-        
 
-        public void addBtn_Click(object sender, RoutedEventArgs e)
+        //lägg till en ny person
+        private void addBtn_Click(object sender, RoutedEventArgs e)
         {
             
 
@@ -67,7 +69,7 @@ namespace Godiskalkylatorn
             Clear();
 
         }
-
+        //inkapsling
         public void AddPerson(string inputFirst, string inputLast, int inputAge)
         {
             Person person = new Person();
@@ -79,23 +81,25 @@ namespace Godiskalkylatorn
         }
         
         //fördela metod
-        private void okBtn_Click(object sender, RoutedEventArgs e)
+        public void okBtn_Click(object sender, RoutedEventArgs e)
         {
 
             int candies = int.Parse(godisBox.Text);
+            
             candyCalculator.DistributeCandies(candies);
+
             personListBox.ItemsSource = null;
             personListBox.ItemsSource = candyCalculator.Members;
-            
-            
 
+            //Sparar till JSON
+            SaveJSON();
 
         }
 
         
         
 
-
+        //radioknapparna för förnamn, efternamn och ålder
         private void radioLastName_Checked(object sender, RoutedEventArgs e)
         {
             candyCalculator.SortByLastName();
@@ -103,18 +107,48 @@ namespace Godiskalkylatorn
             personListBox.ItemsSource = candyCalculator.Members;
         }
 
-        public void radioFirstName_Checked(object sender, RoutedEventArgs e)
+        private void radioFirstName_Checked(object sender, RoutedEventArgs e)
         {
             candyCalculator.SortByFirstName();
             personListBox.ItemsSource = null;
             personListBox.ItemsSource = candyCalculator.Members;
         }
 
-        public void radioAge_Checked(object sender, RoutedEventArgs e)
+        private void radioAge_Checked(object sender, RoutedEventArgs e)
         {
             candyCalculator.SortByAge();
             personListBox.ItemsSource = null;
             personListBox.ItemsSource = candyCalculator.Members;
         }
+
+
+        //metoden för att kolla JSON-filen från tidigare session
+        private void CheckJSON()
+        {
+            string fileName = "CandyCalculator.json";
+            if (File.Exists(fileName))
+            {
+                candyCalculator = FileHandler.Open<CandyCalculator>(fileName);
+
+                personListBox.ItemsSource = null;
+                personListBox.ItemsSource = candyCalculator.Members;
+            }
+            else
+            {
+                personListBox.ItemsSource = null;
+                personListBox.ItemsSource = candyCalculator.Members;
+            }
+        }
+        //metoden för att spara JSON-filen
+        private void SaveJSON()
+        {
+            string fileName = "CandyCalculator.json";
+            FileHandler.Save(candyCalculator, fileName);
+        }
+        
+
+
+        
+
     }
 }
